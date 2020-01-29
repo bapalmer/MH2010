@@ -137,7 +137,7 @@ The first step is to calculate the value for t from our sample data. This is our
 
 # https://en.wikipedia.org/wiki/Welch's_t-test
 
-# First, just to see how eveCalcuate T "by hand"
+# First, just to see how to calcuate T "by hand"
   m_act <- mean(study_df$y[study_df$arm == "Active"])
   m_con <- mean(study_df$y[study_df$arm == "Control"])
   v_act <-  var(study_df$y[study_df$arm == "Active"])
@@ -197,7 +197,7 @@ Others would use the p-value as a hypothesis test. In the example above, it woul
 
 In the example above, we only considered our estimate of t with respect to one tail of the sampling distribution of t under the null. This is what we refer to as a one-sided test. However, it usually makes more sense to make it relative to both tails, so that the null is t = 0 vs. t < 0 or t > 0. 
 
-```{r t_two_sidedd}
+```{r t_two_sided}
 
   g3 <- g2 +
     stat_function(xlim = c(t_sample , 4), 
@@ -224,7 +224,7 @@ Now this was a fair bit of work just to do a simple t-test. So now let's R do th
 
 ### Side-note: Linear models
 
-We noted in EH6124 that most commonly used statistical tests can be represented by linear models. The advantage of this is two-fold. First, linear models can incorporate covariate information which often leads to more efficient estimators by integrating out variability in the outcome predicted by the covariates. It's also useful to think in terms of linear models because it's much easier than trying to remember a multitude statistical tests. 
+Most commonly used statistical tests can be represented by linear models. The advantage of this is two-fold. First, linear models can incorporate covariate information which often leads to more efficient estimators by integrating out variability in the outcome predicted by the covariates. It's also useful to think in terms of linear models because it's much easier than trying to remember a multitude statistical tests. 
 
 For example, the t-test is used when we are interested in a difference in means and when we have a fairly small sample size (the specific problem the t-test addresses is that when we have a small sample and we need to use the sample standard deviation to work out the distribution of the sample mean, then we should have more uncertainty in that distribution, i.e. it should be wider - it should have "fatter tails").
 
