@@ -302,7 +302,7 @@ Now let's look at what happens if we repeat this process many times.
 
   ggplot(results, aes(x = p_value)) +
     geom_histogram() +
-    geom_vline(xintercept = 0.05, colour = "red", linepype = "dashed")
+    geom_vline(xintercept = 0.05, colour = "red", linetype = "dashed")
   
 ```
 
@@ -318,7 +318,7 @@ Just for fun, what will happen to the distribution of p-values if I decrease the
 
   ggplot(results, aes(x = p_value)) +
     geom_histogram() +
-    geom_vline(xintercept = 0.05, colour = "red", linepype = "dashed")
+    geom_vline(xintercept = 0.05, colour = "red", linetype = "dashed")
   
 ```
 
@@ -334,7 +334,7 @@ And if I increase the sample size?
 
   ggplot(results, aes(x = p_value)) +
     geom_histogram() +
-    geom_vline(xintercept = 0.05, colour = "red", linepype = "dashed")
+    geom_vline(xintercept = 0.05, colour = "red", linetype = "dashed")
   
 ```
 
@@ -377,7 +377,7 @@ So now let's look at the second kind of error, and generate some data with a kno
 
   ggplot(results, aes(x = p_value)) +
     geom_histogram() +
-    geom_vline(xintercept = 0.05, colour = "red", linepype = "dashed")
+    geom_vline(xintercept = 0.05, colour = "red", linetype = "dashed")
   
 ```
 
@@ -393,7 +393,7 @@ Most of the time people recommend a power of at least 80% (more on this later), 
 
   ggplot(results, aes(x = p_value)) +
     geom_histogram() +
-    geom_vline(xintercept = 0.05, colour = "red", linepype = "dashed")
+    geom_vline(xintercept = 0.05, colour = "red", linetype = "dashed")
 
 ```
 
@@ -426,7 +426,7 @@ Ha! So to detect an effect this small (relative to the SD of the SBP distributio
 
   ggplot(results, aes(x = p_value)) +
     geom_histogram() +
-    geom_vline(xintercept = 0.05, colour = "red", linepype = "dashed")
+    geom_vline(xintercept = 0.05, colour = "red", linetype = "dashed")
 
 ```
 
@@ -439,7 +439,7 @@ I want to point out one more thing, which is the distribution of p-values that f
   filter(results, p_value <= 0.05) %>%
   ggplot(aes(x = p_value)) +
     geom_histogram() +
-    geom_vline(xintercept = 0.05, colour = "red", linepype = "dashed")
+    geom_vline(xintercept = 0.05, colour = "red", linetype = "dashed")
 
 ```
 
